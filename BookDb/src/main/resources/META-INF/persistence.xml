@@ -1,0 +1,18 @@
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+  version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+  <persistence-unit name="BookDb" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <class>com.rielley.bookdb.model.Author</class>
+    <class>com.rielley.bookdb.model.Book</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/steven" />
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+      <property name="javax.persistence.jdbc.user" value="steven" />
+      <property name="javax.persistence.jdbc.password" value="VULbe012019" />
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <property name="javax.persistence.sql-load-script-source" value="insert.sql"/>
+    </properties>
+  </persistence-unit>
+</persistence>
