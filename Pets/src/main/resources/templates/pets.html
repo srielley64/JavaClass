@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Pet Adoption Welcome Page</title>
+</head>
+<body>
+  <h1>Pet Adoption Welcome Page</h1>
+  <div th:text="Hello there, ${adopter.name}"></div>
+  <table>
+    <thead>
+      <tr>
+        <td>Pet Name</td>
+        <td>Adopter's Name</td>
+        <td>Adoption Date</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:object="${adopter}" th:each="adopter : ${adopters}" >
+        <td>*{pet.name}</td>
+        <td>*{name}</td>
+        <td>*{pet.adoptionDate}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+  <a href="/pets">Recent Adoptions</a>
+</body>
+</html>
