@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <title>Thymeleaf Booklist</title>
+</head>
+<body>
+<div th:insert="~{format::header}"></div>
+<main role="main" class="container">
+  <div class="starter-template">
+    <h1>ThymeLeaf Book List</h1>
+    <h2>
+      <span th:text="'Hello, ' + ${message}"></span>
+    </h2>
+  </div>
+  <ol>
+    <li th:each="book : ${bookList}"
+        th:text="${book.title} + ', ' + ${book.author} + ', '+ ${{book.copyright}}" >
+    </li>
+  </ol>
+</main>
+<div th:insert="~{format::footer}"></div>
+</body>
+</html>
