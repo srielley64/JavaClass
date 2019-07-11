@@ -1,4 +1,4 @@
-package com.rielley.booklist.repositories;
+package com.rielley.booklist.services;
 
 import com.rielley.booklist.models.Book;
 import java.text.ParseException;
@@ -9,7 +9,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BooklistServer {
+public class BooklistBasedServer {
 
   private List<Book> bookList = new ArrayList<>();
   private SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -18,7 +18,7 @@ public class BooklistServer {
     return bookList;
   }
 
-  public BooklistServer() {
+  public BooklistBasedServer() {
     Date cr = null;
     try {
       cr = sdFormat.parse("1992-04-01");

@@ -13,11 +13,13 @@
       <span th:text="'Hello, ' + ${message}"></span>
     </h2>
   </div>
+  <div th:>
   <ol>
     <li th:each="book : ${bookList}"
         th:text="${book.title} + ', ' + ${book.author} + ', '+ ${{book.copyright}}" >
     </li>
   </ol>
+  </div>
 </main>
 <div th:insert="~{format::footer}"></div>
 </body>

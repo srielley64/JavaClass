@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Book Reading List</title>
+</head>
+<body>
+<div th:replace="format :: header"></div>
+<div th:object="${book}">
+  Title: <span th:text="*{title}"/>
+  Author: <span th:text="*{author}"/>
+  Copyright: <span th:text="*{copyright}"/>
+</div>
+<div th:replace="format :: footer"></div>
+</body>
+</html>

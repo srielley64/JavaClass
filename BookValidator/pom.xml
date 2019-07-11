@@ -9,11 +9,11 @@
     <version>2.1.6.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-  <groupId>com.launchacademy</groupId>
-  <artifactId>booklist</artifactId>
+  <groupId>com.rielley</groupId>
+  <artifactId>bookvalidator</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>booklist</name>
-  <description>Book List for Launch Academy Clinic</description>
+  <name>bookvalidator</name>
+  <description>Demo project for Spring Boot</description>
 
   <properties>
     <java.version>11</java.version>
@@ -26,16 +26,17 @@
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
     <dependency>
       <groupId>org.flywaydb</groupId>
       <artifactId>flyway-core</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-thymeleaf</artifactId>
-    </dependency>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
@@ -46,6 +47,11 @@
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
