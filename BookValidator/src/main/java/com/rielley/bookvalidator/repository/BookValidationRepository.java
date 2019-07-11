@@ -1,5 +1,9 @@
 package com.rielley.bookvalidator.repository;
 
-public interface BookValidationRepository {
+import com.rielley.bookvalidator.model.Book;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+public interface BookValidationRepository
+    extends PagingAndSortingRepository<Book, Integer> {
 
 }

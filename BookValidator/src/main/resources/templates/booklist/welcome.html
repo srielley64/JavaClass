@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Format for Book List</title>
 </head>
 <body>
-$END$
+  <div th:replace="/booklist/format::header"></div>
+  <h1>Welcome</h1>
+  <a th:href="@{/booklist/list}">List all books</a>
+  <a th:href="@{/booklist/new}">Add Book</a>
+  <a th:href="@{/booklist/delete}">Remove Book</a>
+  <a th:href="@{/booklist/update}">Update Book</a>
+  <div th:replace="/booklist/format::footer"></div>
 </body>
 </html>

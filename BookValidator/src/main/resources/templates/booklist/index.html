@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Book List</title>
 </head>
 <body>
-$END$
+
+  <dl th:each="book : ${bookList}" th:object="${book}">
+    <dd th:text="'Title: '+ *{title}"></dd>
+    <dd th:text="'Author: '+ *{author}"></dd>
+    <dd th:text="'Copyright: '+ *{copyright}"></dd>
+  </dl>
+  <a th:href="@{/booklist/new}">Add Book</a>
+  <a th:href="@{/booklist/delete}">Remove Book</a>
+  <a th:href="@{/booklist/update}">Update Book</a>
 </body>
 </html>
