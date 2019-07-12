@@ -1,5 +1,8 @@
 package com.launchacademy.pets.models;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Adopter {
 
   private String name;

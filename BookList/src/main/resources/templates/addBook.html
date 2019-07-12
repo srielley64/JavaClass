@@ -5,7 +5,7 @@
   </head>
   <body>
   <div th:replace="format :: header">Header</div>
-  <form action="#" th:action="@{/booklist/addBook}" th:object="${book}" method="post">
+  <form action="#" th:action="@{/add}" th:object="${book}" method="post">
       <label>Title</label>
       <input type="text" th:field="*{title}" /><br/>
       <label>Author</label>

@@ -56,8 +56,9 @@ public class WidgetController extends HttpServlet {
       Widget widget = new Widget(id, name, price, descript);
       widgetServer.add(widget);
       req.setAttribute("widget", widget);
-      RequestDispatcher dispatcher = req.getRequestDispatcher("/widgets/widget.jsp");
-      dispatcher.forward(req, resp);
+
+//      RequestDispatcher dispatcher = req.getRequestDispatcher("/widgets/widget.jsp");
+//      dispatcher.forward(req, resp);
     } else {
       resp.sendError(HttpServletResponse.SC_NOT_FOUND);
     }

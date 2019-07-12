@@ -6,13 +6,22 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 @Table(name="book")
 public class Book {
 
@@ -23,16 +32,33 @@ public class Book {
   private long id;
 
   @NotNull
+  @NonNull
   @Column(nullable = false)
   private String title;
 
   @NotNull
-  @Column(nullable = false)
-  private String author;
+  @NonNull
+  @ManyToOne(targetEntity = Author.class)
+  private Author author;
 
   @NotNull
+  @NonNull
   @Column(nullable = false)
   @Temporal(TemporalType.DATE)
+  @DateTimeFormat(pattern="yyyy-MM-dd")
   private Date copyright;
+
+  @Column(nullable = false)
+  private int mode;
+
+  @Column(nullable = true)
+  @Temporal(TemporalType.DATE)
+  @DateTimeFormat(pattern="yyyy-MM-dd")
+  private Date start;
+
+  @Column(nullable = true)
+  @Temporal(TemporalType.DATE)
+  @DateTimeFormat(pattern="yyyy-MM-dd")
+  private Date finish;
 
 }

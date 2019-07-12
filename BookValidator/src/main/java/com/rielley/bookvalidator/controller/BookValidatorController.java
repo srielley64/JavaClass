@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -51,10 +52,10 @@ public class BookValidatorController {
   }
 
   @GetMapping(value="/list")
-  public String listBooks(@ModelAttribute("pageNumber") int pageNumber, Model model) {
-    Pageable pageable = PageRequest.of(pageNumber, 3);
-    Page<Book> page = bookValidationService.findAll(pageable);
-    model.addAttribute("page", page);
+  public String listBooks(@RequestParam("page") int page, Model model) {
+    Pageable pageable = PageRequest.of(page, 3);
+    Page<Book> pager = bookValidationService.findAll(pageable);
+    model.addAttribute("page", pager);
     return "booklist/index";
   }
 

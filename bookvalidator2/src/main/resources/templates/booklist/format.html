@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Format for Book List</title>
 </head>
 <body>
-$END$
+  <header th:fragment="header">
+    <div><h1>Book List</h1></h2></div>
+  </header>
+  <footer th:fragment="footer">
+    <div>Unpublished Work &copy; 2019 Steve Rielley</div>
+  </footer>
 </body>
 </html>

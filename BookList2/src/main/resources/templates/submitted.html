@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body})}">
+<body>
+<h1>Submission Results</h1>
+<div class="book" th:object="${book}">
+  <h2 th:if="*{not #strings.isEmpty(title)}" th:text="*{title}"></h2>
+  <dl>
+    <dt>Author</dt>
+    <dd th:text="*{author}"></dd>
+
+    <dt>Copyright Date</dt>
+    <dd th:text="*{copyright}"></dd>
+  </dl>
+</div>
+</body>
+</html>

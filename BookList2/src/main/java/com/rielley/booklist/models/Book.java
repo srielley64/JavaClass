@@ -1,12 +1,15 @@
 package com.rielley.booklist.models;
 
 import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Book {
   private String title;
   private String author;
+
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
   private Date copyright;
 
   public Book() { }

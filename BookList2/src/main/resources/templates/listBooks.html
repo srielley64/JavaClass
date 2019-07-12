@@ -13,9 +13,9 @@
       <span th:text="'Hello, ' + ${message}"></span>
     </h2>
   </div>
-  <div th:>
+  <div>
   <ol>
-    <li th:each="book : ${bookList}"
+    <li th:each="book : ${bookList}" th:href="@{/linktosomewhere}"
         th:text="${book.title} + ', ' + ${book.author} + ', '+ ${{book.copyright}}" >
     </li>
   </ol>

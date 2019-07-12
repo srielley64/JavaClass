@@ -12,6 +12,11 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Table(name = "book")
@@ -23,11 +28,11 @@ public class Book {
   @Column(name="id", nullable=false, unique=true)
   private Long id;
 
-  @Column(name="author_id", nullable=false, insertable = false, updatable = false)
-  private Long authorId;
+//  @Column(name="author_id", nullable=false, insertable = false, updatable = false)
+//  private Long authorId;
 
   @ManyToOne
-  @JoinColumn(name="author_id", nullable = false)
+//  @JoinColumn(name="author_id", nullable = false, insertable = false, updatable = false)
   Author author;
 
   @Column(length=100)
@@ -54,14 +59,14 @@ public class Book {
     return id;
   }
 
-  public Long getAuthorId() {
-    return authorId;
-  }
-
-  public void setAuthorId(Long authorId) {
-    this.authorId = authorId;
-  }
-
+//  public Long getAuthorId() {
+//    return authorId;
+//  }
+//
+//  public void setAuthorId(Long authorId) {
+//    this.authorId = authorId;
+//  }
+//
   public Author getAuthor() {
     return author;
   }
@@ -98,7 +103,7 @@ public class Book {
   public String toString() {
     return "Book{" +
         "id=" + id +
-        ", authorId=" + authorId +
+//        ", authorId=" + authorId +
         ", author=" + author +
         ", title='" + title + '\'' +
         ", author=" + author +

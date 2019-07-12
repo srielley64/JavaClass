@@ -10,6 +10,9 @@
   Author: <span th:text="*{author}"/>
   Copyright: <span th:text="*{copyright}"/>
 </div>
+<a th:href="@{/listBooks}">List of all your books</a><br/>
+<a th:href="@{/removeBook}">Remove a Book</a><br/>
+<a th:href="@{/status}">Book Status</a><br/>
 <div th:replace="format :: footer"></div>
 </body>
 </html>

@@ -3,10 +3,13 @@ package com.launchacademy.pets.config;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+@Configuration
 public class MvcConfiguration implements WebMvcConfigurer {
 
   private static final SimpleDateFormat simpleDateFormat =
